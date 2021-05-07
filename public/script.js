@@ -5,8 +5,8 @@ canvas.height = window.innerHeight
 
 const ctx = canvas.getContext('2d')
 
-ctx.fillStyle = 'blue'
-ctx.fillRect(20, 20, 20, 20)
+ctx.fillStyle = 'red'
+ctx.fillRect(20, 20, 5, 5)
 
 canvas.onmousemove = (e) => {
     // console.log(e)
@@ -39,4 +39,4 @@ socket.on('buttonClicked', () => {
 
 setInterval(() => {
     ctx.clearRect(0, 0, canvas.width, canvas.height)
-}, 2000)
+}, 20000)
