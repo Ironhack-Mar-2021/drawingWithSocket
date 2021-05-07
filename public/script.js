@@ -5,7 +5,7 @@ canvas.height = window.innerHeight
 
 const ctx = canvas.getContext('2d')
 
-ctx.fillStyle = 'red'
+ctx.fillStyle = 'purple'
 ctx.fillRect(20, 20, 5, 5)
 
 canvas.onmousemove = (e) => {
@@ -22,7 +22,7 @@ let socket = io();
 socket.on('drawASquare', (coords) => drawSquare(coords))
 
 function drawSquare({ x, y }) {
-    ctx.fillRect(x, y, 20, 20)
+    ctx.fillRect(x, y, 5, 5)
 }
 
 
