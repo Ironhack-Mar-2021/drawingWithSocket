@@ -5,7 +5,7 @@ canvas.height = window.innerHeight
 
 const ctx = canvas.getContext('2d')
 
-let color = rgb(Math.random() * 255, Math.random() * 255, Math.random() * 255)
+let color = `rgb(${Math.random() * 255, Math.random() * 255, Math.random() * 255})`
 // ctx.fillStyle = color 
 // ctx.fillRect(20, 20, 5, 5)
 
