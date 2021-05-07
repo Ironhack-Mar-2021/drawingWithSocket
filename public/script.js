@@ -5,12 +5,13 @@ canvas.height = window.innerHeight
 
 const ctx = canvas.getContext('2d')
 
-ctx.fillStyle = 'purple'
-ctx.fillRect(20, 20, 5, 5)
+let color = rgb(Math.random() * 255, Math.random() * 255, Math.random() * 255)
+// ctx.fillStyle = color 
+// ctx.fillRect(20, 20, 5, 5)
 
 canvas.onmousemove = (e) => {
     // console.log(e)
-    socket.emit('sendSqToServer', { x: e.clientX, y: e.clientY })
+    socket.emit('sendSqToServer', { x: e.clientX, y: e.clientY, color })
 }
 
 
@@ -21,7 +22,8 @@ let socket = io();
 
 socket.on('drawASquare', (coords) => drawSquare(coords))
 
-function drawSquare({ x, y }) {
+function drawSquare({ x, y, color }) {
+    ctx.fillStyle = color
     ctx.fillRect(x, y, 5, 5)
 }
 
